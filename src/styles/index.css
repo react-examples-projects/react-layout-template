@@ -74,7 +74,6 @@ body {
   background-color: rgba(255, 255, 255, 0.24);
 }
 
-
 .nav .nav-header .nav-logo {
   display: flex;
   align-items: center;
@@ -142,6 +141,10 @@ body {
 @media screen and (max-width: 760px) {
   body {
     font-size: 12px;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .nav {
