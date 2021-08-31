@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.788);
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  height: 100vh;
+  position: relative;
+}
+
+.nav::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 95%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(119, 136, 153, 0.226);
+}
+
+.nav .nav-header {
+  padding: 3rem 1.5rem 0 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav .nav-header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 80%;
+  height: 1px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+
+.nav .nav-header .nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav .nav-header .nav-logo svg {
+  stroke: #fff;
+  font-size: 2.5rem;
+}
+
+.nav .nav-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.nav .nav-menu .nav-item {
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.nav .nav-menu .nav-item span {
+  color: #fff;
+}
+
+.nav .nav-menu .nav-item .nav-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  stroke: #fff;
+}
+
+.nav .nav-menu .nav-item:hover {
+  background-color: #161616;
+}
+
+.nav .nav-menu .nav-menu-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nav .nav-menu .nav-menu-footer > img {
+  margin: 6rem auto 1rem auto;
+  max-width: 150px;
+}
+
+.nav .nav-menu .nav-menu-footer .nav-menu-footer-title {
+  margin-bottom: 1rem;
+}
+
+.nav .nav-menu .nav-menu-footer .nav-menu-footer-content {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 760px) {
+  body {
+    font-size: 12px;
+  }
+
+  .nav {
+    display: block;
+    position: fixed;
+    height: 100%;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 75px;
+    overflow-x: hidden;
+    max-width: 250px;
+    transition: all 0.2s ease;
+  }
+
+  .nav.is-active {
+    width: 220px;
+  }
+
+  .nav:not(.is-active) .nav-menu .nav-menu-footer,
+  .nav:not(.is-active) .nav-menu .nav-item span {
+    display: none;
+  }
+
+  .nav:not(.is-active) .nav-menu .nav-item {
+    padding: 0.8rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .nav:not(.is-active) .nav-menu .nav-item .nav-icon {
+    margin-right: 0;
+  }
+
+  .nav:not(.is-active) .nav-header {
+    padding: 0.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .nav:not(.is-active) .nav-header h3 {
+    display: none;
+  }
+}
