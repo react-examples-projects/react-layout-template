@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { mediaQuery } from "../../helpers/utils";
+
+const mediaMd = mediaQuery("md");
 
 export const Main = styled.main`
   padding: 3rem;
@@ -19,11 +22,10 @@ export const Container = styled.div`
   max-width: 1600px;
   margin: auto;
   width: 100%;
-
-  @media screen and (max-width: 760px) {
-    display: block;
-    margin-left: 3rem;
-  }
+  ${mediaMd(
+    `display: block;
+     margin-left: 3rem;`
+  )}
 `;
 
 export const Button = styled.button`
@@ -43,9 +45,7 @@ export const Button = styled.button`
       background-color: #789 !important;
     }
   }
-  @media screen and (max-width: 760px) {
-    display: block;
-  }
+  ${mediaMd(`display: block;`)}
 `;
 
 export const Nav = styled.nav`
@@ -67,8 +67,7 @@ export const Nav = styled.nav`
     transform: translateY(-50%);
     background-color: rgba(119, 136, 153, 0.226);
   }
-
-  @media screen and (max-width: 760px) {
+  ${mediaMd(`
     display: block;
     position: fixed;
     height: 100%;
@@ -82,8 +81,7 @@ export const Nav = styled.nav`
 
     &.is-active {
       width: 220px;
-    }
-  }
+    }`)}
 `;
 
 export function NavLayout(props) {
@@ -125,8 +123,8 @@ export const NavHeader = styled.header`
     background-color: rgba(255, 255, 255, 0.24);
   }
 
-  @media screen and (max-width: 760px) {
-    ${Nav}:not(.is-active) & {
+  ${mediaMd(`
+      ${Nav}:not(.is-active) & {
       padding: 0.5rem;
       justify-content: center;
       margin-top: 3rem;
@@ -134,8 +132,7 @@ export const NavHeader = styled.header`
       h3 {
         display: none;
       }
-    }
-  }
+    }`)}
 `;
 
 export const NavMenu = styled.div`
@@ -171,11 +168,11 @@ export const LinkItem = styled.div`
 
 export const Span = styled.span`
   color: #fff;
-  @media screen and (max-width: 760px) {
-    ${Nav}:not(.is-active) & {
+  ${mediaMd(
+    `${Nav}:not(.is-active) & {
       display: none;
-    }
-  }
+    }`
+  )}
 `;
 
 export const IconItem = styled.div`
@@ -187,11 +184,11 @@ export const IconItem = styled.div`
     stroke: #fff;
   }
 
-  @media screen and (max-width: 760px) {
-    ${Nav}:not(.is-active) & svg {
+  ${mediaMd(
+    `${Nav}:not(.is-active) & svg {
       margin-right: 0;
-    }
-  }
+    }`
+  )}
 `;
 
 export const NavFooter = styled.footer`
