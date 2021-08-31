@@ -1,5 +1,31 @@
 import styled from "styled-components";
 
+export const Main = styled.main`
+  padding: 3rem;
+  position: relative;
+  overflow: hidden auto;
+  height: 100vh;
+  width: 100%;
+`;
+
+export const MainWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+`;
+
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 5fr;
+  max-width: 1600px;
+  margin: auto;
+  width: 100%;
+
+  @media screen and (max-width: 760px) {
+    display: block;
+    margin-left: 3rem;
+  }
+`;
+
 export const Button = styled.button`
   display: none;
   padding: 5px !important;

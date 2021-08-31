@@ -1,11 +1,8 @@
-import styled from "styled-components";
-
-export default function MainLayout(props) {
-  const Main = styled.main`
-    padding: 3rem;
-    position: relative;
-    overflow-y: auto;
-    height: 100vh;
-  `;
+import { Main, MainWrapper } from "./styles";
+function MainLayout(props) {
   return <Main {...props} />;
 }
+
+MainLayout.Wrapper = MainWrapper;
+
+export default MainLayout;
