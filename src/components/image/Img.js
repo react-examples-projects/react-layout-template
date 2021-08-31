@@ -14,7 +14,7 @@ const Figure = styled.figure`
 
 export default function Img({ src, title = "Untitle" }) {
   return (
-    <Figure className="figure">
+    <Figure>
       <Image src={src} alt={title} />
       <figcaption>{title}</figcaption>
     </Figure>
