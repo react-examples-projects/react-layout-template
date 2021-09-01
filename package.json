@@ -1,11 +1,9 @@
 {
+  "homepage": "https://znareak.github.io/react-layout-template",
   "name": "react-styled-components",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -13,8 +11,7 @@
     "react-responsive": "^9.0.0-beta.3",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
-    "styled-components": "^5.3.1",
-    "web-vitals": "^1.1.2"
+    "styled-components": "^5.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
