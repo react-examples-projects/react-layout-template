@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../helpers/utils";
+import { navbar } from "../../../config";
 
 const mediaMd = mediaQuery("md");
 
@@ -18,7 +19,7 @@ export const MainWrapper = styled.div`
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) 5fr;
+  grid-template-columns: minmax(${navbar.minWidth}, ${navbar.width}) 5fr;
   max-width: 1600px;
   margin: auto;
   width: 100%;
@@ -51,22 +52,11 @@ export const Button = styled.button`
 export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
-  background-color: #000000;
+  background-color: ${navbar.background};
   height: 100vh;
   position: relative;
-  color: #fff;
+  color: ${navbar.color};
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 1px;
-    height: 95%;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(119, 136, 153, 0.226);
-  }
   ${mediaMd(`
     display: block;
     position: fixed;
@@ -78,9 +68,9 @@ export const Nav = styled.nav`
     overflow-x: hidden;
     max-width: 250px;
     transition: all 0.2s ease;
-
+ 
     &.is-active {
-      width: 220px;
+      width: ${navbar.activeNavbarWith};
     }`)}
 `;
 
@@ -93,15 +83,15 @@ export const NavLogo = styled.div`
   align-items: center;
 
   svg {
-    stroke: #fff;
-    font-size: 2rem;
+    stroke: ${navbar.logo.stroke};
+    font-size: ${navbar.logo.fontSize};
   }
 `;
 
 export const NavTitle = styled.h2`
-  color: #fff;
+  color: ${navbar.logo.title.color};
   margin-left: 0.5rem;
-  font-size: 1rem;
+  font-size: ${navbar.logo.title.fontSize};
   text-transform: capitalize;
 `;
 
@@ -116,11 +106,11 @@ export const NavHeader = styled.header`
     display: block;
     position: absolute;
     width: 80%;
-    height: 1px;
+    height: ${navbar.divider.height};
     bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.24);
+    background-color: ${navbar.divider.background};
   }
 
   ${mediaMd(`
@@ -146,14 +136,14 @@ export const LinkItem = styled.div`
   color: inherit;
   text-decoration: none;
   transition: background-color 0.2s ease;
-  padding: 1.5rem;
+  padding: ${navbar.item.padding};
   display: flex;
   align-items: center;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: ${navbar.item.radius};
 
   &:hover {
-    background-color: #161616;
+    background-color: ${navbar.item.hover.background};
   }
 
   @media screen and (max-width: 760px) {
@@ -167,7 +157,11 @@ export const LinkItem = styled.div`
 `;
 
 export const Span = styled.span`
-  color: #fff;
+  color: ${navbar.item.color};
+
+  ${LinkItem}:hover & {
+    color: ${navbar.item.hover.color};
+  }
   ${mediaMd(
     `${Nav}:not(.is-active) & {
       display: none;
@@ -179,9 +173,13 @@ export const IconItem = styled.div`
   display: flex;
   align-items: center;
   svg {
-    font-size: 1.3rem;
+    font-size: ${navbar.item.icon.fontSize};
     margin-right: 1rem;
-    stroke: #fff;
+    stroke: ${navbar.item.icon.stroke};
+  }
+
+  ${LinkItem}:hover & svg {
+    stroke: ${navbar.item.icon.hover.stroke};
   }
 
   ${mediaMd(

@@ -16,9 +16,7 @@ export default function Navbar() {
   const isSmall = useMediaQuery({ query: "(max-width: 760px)" });
   const isMedium = useMediaQuery({ query: "(min-width: 761px)" });
   const [isActive, setActive] = useState(false);
-  const toggle = () => {
-    setActive(!isActive);
-  };
+  const toggle = () => setActive(!isActive);
 
   return (
     <NavLayout

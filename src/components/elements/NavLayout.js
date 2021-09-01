@@ -36,7 +36,6 @@ function Item({ text, icon: Icon, ...props }) {
         <IconItem alt={text}>
           <Icon />
         </IconItem>
-
         <Span>{text}</Span>
       </LinkItem>
     </Link>
