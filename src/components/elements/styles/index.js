@@ -169,7 +169,7 @@ export const Span = styled.span`
   )}
 `;
 
-export const IconItem = styled.div`
+export const IconItem = styled.span`
   display: flex;
   align-items: center;
   svg {

@@ -27,7 +27,7 @@ const navbar = {
 
   item: {
     color: "#ffffffa3",
-    radius: "8px",
+    radius: "6px",
     padding: "1.5rem",
 
     hover: {
@@ -40,7 +40,7 @@ const navbar = {
       stroke: "#ffffffa3",
       
       hover: {
-        color: "#fff",
+        stroke: "#fff",
       },
     },
   },
