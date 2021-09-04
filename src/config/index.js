@@ -1,6 +1,6 @@
 const breackpoints = {
   sm: 570,
-  md: 760,
+  md: 970,
 };
 
 const navbar = {

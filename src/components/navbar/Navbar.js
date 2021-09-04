@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NavLayout from "../elements/NavLayout";
 import { useMediaQuery } from "react-responsive";
+import { breackpoints } from "../../config";
 import cls from "classnames";
 import {
   FiHome,
@@ -13,8 +14,10 @@ import {
 import HamburgerButton from "../elements/HamburgerButton";
 
 export default function Navbar() {
-  const isSmall = useMediaQuery({ query: "(max-width: 760px)" });
-  const isMedium = useMediaQuery({ query: "(min-width: 761px)" });
+  const isSmall = useMediaQuery({ query: `(max-width: ${breackpoints.md}px)` });
+  const isMedium = useMediaQuery({
+    query: `(min-width: ${breackpoints.md + 1}px)`,
+  });
   const [isActive, setActive] = useState(false);
   const toggle = () => setActive(!isActive);
 

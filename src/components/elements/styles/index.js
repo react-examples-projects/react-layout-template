@@ -3,6 +3,7 @@ import { mediaQuery } from "../../helpers/utils";
 import { navbar } from "../../../config";
 
 const mediaMd = mediaQuery("md");
+const mediaSm = mediaQuery("sm");
 
 export const Main = styled.main`
   padding: 3rem;
@@ -10,11 +11,18 @@ export const Main = styled.main`
   overflow: hidden auto;
   height: 100vh;
   width: 100%;
+  ${mediaSm(`
+    padding: 1.4rem;
+  `)}
 `;
 
 export const MainWrapper = styled.div`
   width: 100%;
   max-width: 900px;
+
+  ${mediaSm(`
+    max-width: calc(100% - 3.1rem);
+  `)}
 `;
 
 export const Container = styled.div`
@@ -25,7 +33,9 @@ export const Container = styled.div`
   width: 100%;
   ${mediaMd(
     `display: block;
-     margin-left: 3rem;`
+     margin-left: 3.1rem;
+     font-size: 13px;
+     `
   )}
 `;
 
@@ -72,6 +82,10 @@ export const Nav = styled.nav`
     &.is-active {
       width: ${navbar.activeNavbarWith};
     }`)}
+
+  ${mediaSm(`
+    width: 50px;
+  `)}
 `;
 
 export function NavLayout(props) {
@@ -146,14 +160,19 @@ export const LinkItem = styled.div`
     background-color: ${navbar.item.hover.background};
   }
 
-  @media screen and (max-width: 760px) {
-    ${Nav}:not(.is-active) & {
+  ${mediaMd(`
+      ${Nav}:not(.is-active) & {
       padding: 0.8rem 0.5rem;
       display: flex;
       justify-content: center;
       margin-bottom: 2rem;
+    }`)}
+
+  ${mediaSm(`
+    ${Nav}:not(.is-active) &{
+      margin-bottom: 1rem;
     }
-  }
+  `)}
 `;
 
 export const Span = styled.span`
@@ -167,6 +186,10 @@ export const Span = styled.span`
       display: none;
     }`
   )}
+
+  ${mediaSm(`
+    font-size: 13px;
+  `)}
 `;
 
 export const IconItem = styled.span`
@@ -187,6 +210,12 @@ export const IconItem = styled.span`
       margin-right: 0;
     }`
   )}
+
+  ${mediaSm(`
+    ${LinkItem} & svg{
+      font-size: 1rem;
+    }
+  `)}
 `;
 
 export const NavFooter = styled.footer`
@@ -200,11 +229,11 @@ export const NavFooter = styled.footer`
     max-width: 150px;
   }
 
-  @media screen and (max-width: 760px) {
-    ${Nav}:not(.is-active) & {
+  ${mediaMd(
+    `${Nav}:not(.is-active) & {
       display: none;
-    }
-  }
+    }`
+  )}
 `;
 
 export const NavFooterTitle = styled.h4`
